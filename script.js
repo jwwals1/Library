@@ -12,14 +12,14 @@ function Book(title, author, pages, read) {
 }
 
 function addBookToLibrary() {
-    let title = prompt('title?')
-    let author = prompt('author?')
-    let pages = prompt('pages?')
-    let read = prompt('read?')
-    // let title = document.querySelector('title').value;
-    // let author = document.querySelector('author').value;
-    // let pages = document.querySelector('pages').value
-    // let read = document.querySelector('read').value
+    let title = document.querySelector('#title').value
+    let author = document.querySelector('#author').value
+    let pages = document.querySelector('#pages').value
+    let read = document.querySelector('#read').value
+    // if (title.length == null || author.length == null || pages.length == null || read.length == null) {
+    //     alert('All values must be filled out');
+    //     return;
+    // }
     let newBook = new Book(title, author, pages, read)
     myLibrary.push(newBook)
     library()
@@ -41,6 +41,3 @@ function library() {
 }
 
 
-
-
-library()
