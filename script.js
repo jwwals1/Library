@@ -1,5 +1,23 @@
 const myLibrary = [];
 
+function showNewBookForm() {
+    let showForm = document.getElementById("bookForm")
+    displayValue = "";
+    if (showForm.style.display == "")
+        displayValue = "none"
+    showForm.style.display = displayValue
+
+}
+
+function toggleText(event) {
+    let text = event.textContent || event.innerText;
+    if (text == 'NEW BOOK FORM') {
+        event.innerHTML = "HIDE FORM"
+    }
+    else {
+        event.innerHTML = "NEW BOOK FORM"
+    }
+}
 
 function Book(title, author, pages, read) {
     this.title = title;
@@ -45,3 +63,4 @@ function clearInput() {
     document.querySelector('#author').value = "";
     document.querySelector('#pages').value = "";
 }
+
