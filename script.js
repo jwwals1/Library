@@ -2,11 +2,16 @@ const myLibrary = [];
 
 function showNewBookForm() {
     let showForm = document.getElementById("bookForm")
+    let showButton = document.getElementById("addBookButton")
     displayValue = "";
     if (showForm.style.display == "")
         displayValue = "none"
     showForm.style.display = displayValue
 
+    displayButtonValue = '';
+    if (showButton.style.display == "")
+        displayButtonValue = "none"
+    showButton.style.display = displayButtonValue
 }
 
 function toggleText(event) {
@@ -24,9 +29,6 @@ function Book(title, author, pages, read) {
     this.author = author;
     this.pages = pages
     this.read = read
-    //     this.info = function () {
-    //         return (`${title} by ${author}, ${pages} pages, ${read ? "Read" : "not read yet"}`)
-    //     }
 }
 
 function addBookToLibrary() {
@@ -44,7 +46,6 @@ function addBookToLibrary() {
 }
 
 const theHobbit = new Book('The Hobbit', 'J.R.R Tolkien', 295, 'not read yet')
-// console.log(theHobbit.info())
 
 
 function library() {
