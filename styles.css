@@ -1,6 +1,14 @@
 #library {
+    display: grid;
+    /* padding: 100px; */
     border-style: solid;
     padding: 10px;
+    font-size: 25px
+}
+
+#library>div {
+    display: grid;
+    margin: auto;
 }
 
 h1 {
@@ -51,4 +59,15 @@ form>label {
     padding: 8px;
     border-radius: 10px;
     font-size: 15px;
+}
+
+.libraryHeading {
+    display: flex;
+    background-color: black;
+}
+
+.libraryHeading>h3 {
+    display: grid;
+    margin: auto;
+    color: white;
 }
