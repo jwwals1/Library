@@ -6,9 +6,9 @@
     <title>Document</title>
     <script src="script.js" defer></script>
     <link href="styles.css" rel="stylesheet">
-</head> 
-    <button>NEW BOOK</button>
-    <form action="">
+</head>
+    <button onclick="showNewBookForm(); toggleText(this)" id="newBookButton" >NEW BOOK FORM</button>
+    <form action="" style="display: none;" id="bookForm">
         <label for="title">Title:</label>
         <input type="text" name="title" id="title" placeholder="title" required>
         <label for="author">Author:</label>
