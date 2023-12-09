@@ -10,16 +10,15 @@
     <button>NEW BOOK</button>
     <form action="">
         <label for="title">Title:</label>
-        <input type="text" name="title" id="title" placeholder="title">
+        <input type="text" name="title" id="title" placeholder="title" required>
         <label for="author">Author:</label>
-        <input type="text" name="author" id="author" placeholder="author">
+        <input type="text" name="author" id="author" placeholder="author" required>
         <label for="pages">Pages:</label>
-        <input type="number" name="pages" id="pages" placeholder="pages">
+        <input type="number" name="pages" id="pages" placeholder="pages" required>
         <label for="read">Read:</label>
-        <input type="text" name="read" id="read" placeholder="read">
-        <!-- <input type="submit" onclick="addBookToLibrary()"> -->
+        <input type="checkbox" id="read" value="read">
     </form>
-    <button onclick="addBookToLibrary()">Add Book</button>
+    <button onclick="addBookToLibrary(); clearInput()">Add Book</button>
     <div id="library"></div>
 </body>
 </html>
