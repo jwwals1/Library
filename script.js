@@ -6,21 +6,21 @@ function Book(title, author, pages, read) {
     this.author = author;
     this.pages = pages
     this.read = read
-    this.info = function () {
-        return (`${title} by ${author}, ${pages} pages, ${read}`)
-    }
+    //     this.info = function () {
+    //         return (`${title} by ${author}, ${pages} pages, ${read ? "Read" : "not read yet"}`)
+    //     }
 }
 
 function addBookToLibrary() {
-    let title = document.querySelector('#title').value
-    let author = document.querySelector('#author').value
-    let pages = document.querySelector('#pages').value
-    let read = document.querySelector('#read').value
-    // if (title.length == null || author.length == null || pages.length == null || read.length == null) {
-    //     alert('All values must be filled out');
-    //     return;
-    // }
+    let title = document.querySelector('#title').value;
+    let author = document.querySelector('#author').value;
+    let pages = document.querySelector('#pages').value;
+    let read = document.querySelector('#read').checked;
     let newBook = new Book(title, author, pages, read)
+    if (title.length == 0 || author.length == 0 || pages.length == 0) {
+        alert('All values must be filled out');
+        return
+    }
     myLibrary.push(newBook)
     library()
 }
@@ -35,9 +35,13 @@ function library() {
     for (let i = 0; i < myLibrary.length; i++) {
         let book = myLibrary[i];
         let bookEl = document.createElement("div");
-        bookEl.innerHTML = `${book.title} by ${book.author}, ${book.pages} pages, ${book.read}`;
+        bookEl.innerHTML = `${book.title} by ${book.author}, ${book.pages} pages, ${book.read ? "Read" : "Not read yet"}`;
         books.appendChild(bookEl)
     }
 }
 
-
+function clearInput() {
+    document.querySelector('#title').value = "";
+    document.querySelector('#author').value = "";
+    document.querySelector('#pages').value = "";
+}
