@@ -42,12 +42,12 @@ function addBookToLibrary() {
         return
     }
     myLibrary.push(newBook)
-    library()
+    libraryInfo()
 }
 
 const theHobbit = new Book('The Hobbit', 'J.R.R Tolkien', 295, 'not read yet')
 
-function library() {
+function libraryInfo() {
     const books = document.getElementById('library')
     books.innerHTML = ""
     for (let i = 0; i < myLibrary.length; i++) {
@@ -59,14 +59,24 @@ function library() {
             <div>${book.author}</div>
             <div>${book.pages}</div> 
             <div>${book.read ? "Read" : "Not read yet"} </div>
-            <button onClick="deleteBook(${i})">Delete</Delete>`;
+            <button onClick="deleteBook(${i})">Delete</Delete>
+            <button onClick="readStatus(${i})">Read Status</Delete>`;
         books.appendChild(bookEl)
     }
 }
 
 function deleteBook(index) {
     myLibrary.splice(index, 1)
-    library();
+    libraryInfo();
+}
+
+Book.prototype.toggleRead = function () {
+    this.read = !this.read;
+}
+
+function readStatus(index) {
+    myLibrary[index].toggleRead();
+    libraryInfo()
 }
 
 function clearInput() {
