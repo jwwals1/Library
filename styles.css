@@ -1,16 +1,3 @@
-#library {
-    display: grid;
-    /* padding: 100px; */
-    border-style: solid;
-    padding: 10px;
-    font-size: 25px
-}
-
-#library>div {
-    display: grid;
-    margin: auto;
-}
-
 h1 {
     display: flex;
     justify-content: center;
@@ -61,13 +48,42 @@ form>label {
     font-size: 15px;
 }
 
-.libraryHeading {
+#library {
+    display: grid;
+    border-style: solid;
+    padding: 10px;
+    font-size: 25px
+}
+
+#library>div {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+#library>div>div {
     display: flex;
+    align-items: center;
+    justify-content: center;
+    border-style: solid;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-color: lightgray;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+.libraryHeading {
+    display: grid;
     background-color: black;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding-right: 10px;
+    padding-left: 10px;
 }
 
 .libraryHeading>h3 {
-    display: grid;
+    display: flex;
     margin: auto;
     color: white;
 }
