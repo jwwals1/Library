@@ -59,8 +59,8 @@ function libraryInfo() {
             <div>${book.author}</div>
             <div>${book.pages}</div> 
             <div>${book.read ? "Read" : "Not read yet"} </div>
-            <button onClick="deleteBook(${i})">Delete</Delete>
-            <button onClick="readStatus(${i})">Read Status</Delete>`;
+            <div><button onClick="deleteBook(${i})" id=deleteButton>Delete</button></div>
+            <div><button onClick="readStatus(${i})" id=readStatusButton>Read Status</button></div>`;
         books.appendChild(bookEl)
     }
 }
